@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neoventix | Create and Grow Your Unique Venture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a192f;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a192f 0%, #172a45 50%, #1e3a8a 100%);
+        }
+        
+        .abstract-bg {
+            background-image: radial-gradient(circle at 25% 25%, rgba(30, 58, 138, 0.2) 0%, transparent 50%), 
+                              radial-gradient(circle at 75% 75%, rgba(30, 58, 138, 0.2) 0%, transparent 50%);
+        }
+        
+        .phase-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .phase-card:hover {
+            transform: translateY(-5px);
+            border-left-color: #3b82f6;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            height: 40px;
+            width: 2px;
+            background: rgba(59, 130, 246, 0.5);
+            transform: translateX(-50%);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 50px;
+            border: 2px solid #3b82f6;
+            border-radius: 15px;
+        }
+        
+        .scroll-indicator::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            background: #3b82f6;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            animation: scroll 2s infinite;
+        }
+        
+        @keyframes scroll {
+            0% { opacity: 1; top: 5px; }
+            100% { opacity: 0; top: 25px; }
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <!-- Navigation -->
+    <nav class="abstract-bg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-bold text-blue-400">Neoventix</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" class="text-blue-400 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#journey" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">Journey</a>
+                        <a href="#services" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="#contact" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="abstract-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        <div class="absolute top-0 left-0 w-full h-full opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-blue-500 filter blur-3xl opacity-70"></div>
+            <div class="absolute top-2/3 right-1/4 w-40 h-40 rounded-full bg-indigo-600 filter blur-3xl opacity-70"></div>
+            <div class="absolute bottom-1/4 right-1/3 w-48 h-48 rounded-full bg-blue-400 filter blur-3xl opacity-70"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                        Create and grow your <span class="text-blue-400">unique venture</span> today
+                    </h1>
+                    <p class="text-xl text-gray-300">
+                        From idea to impact - we help aspiring entrepreneurs build and scale new ventures that attract customers and investors.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">
+                            Start Your Journey
+                        </button>
+                        <button class="border border-blue-400 text-blue-400 hover:bg-blue-900 hover:bg-opacity-30 px-6 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">
+                            Explore Services
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Entrepreneur with idea" 
+                         class="rounded-xl shadow-2xl floating w-full h-auto">
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-500 rounded-xl -z-10 opacity-30"></div>
+                    <div class="absolute -top-6 -right-6 w-32 h-32 bg-indigo-600 rounded-xl -z-10 opacity-30"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Customer Journey Section -->
+    <section id="journey" class="py-20 bg-gradient-to-b from-blue-900/10 to-blue-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Your <span class="text-blue-400">4-Phase</span> Success Journey</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    We guide you through every step of building and scaling your venture with proven frameworks and tools.
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline for mobile -->
+                <div class="md:hidden space-y-12">
+                    <div class="timeline-item relative">
+                        <div class="phase-card bg-gray-800 bg-opacity-50 p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4">01</div>
+                                <h3 class="text-xl font-bold text-blue-400">Ideation • Validation • Problem-Solution Fit</h3>
+                            </div>
+                            <p class="text-gray-300 mb-4">
+                                Includes a free tool or quiz + guided questions to shape the idea.
+                            </p>
+                            <button class="text-blue-400 hover:text-blue-300 flex items-center">
+                                Try our Idea Validator <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative">
+                        <div class="phase-card bg-gray-800 bg-opacity-50 p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4">02</div>
+                                <h3 class="text-xl font-bold text-blue-400">INNOVATE – Build the Solution</h3>
+                            </div>
+                            <p class="text-gray-300 mb-4">
+                                Business Model • Prototype • MVP Minimalist digital tools, templates, and optional AI Coach for guidance.
+                            </p>
+                            <button class="text-blue-400 hover:text-blue-300 flex items-center">
+                                Explore Innovation Tools <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative">
+                        <div class="phase-card bg-gray-800 bg-opacity-50 p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4">03</div>
+                                <h3 class="text-xl font-bold text-blue-400">AUTOMATE – Systems That Scale</h3>
+                            </div>
+                            <p class="text-gray-300 mb-4">
+                                Workflow • Sales Funnels • AI Tools Showcase your ready-made tools (e.g. white-labeled automations + Airtable + bots)
+                            </p>
+                            <button class="text-blue-400 hover:text-blue-300 flex items-center">
+                                See Automation Solutions <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="phase-card bg-gray-800 bg-opacity-50 p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4">04</div>
+                                <h3 class="text-xl font-bold text-blue-400">CAPTIVATE – Attract Your Market</h3>
+                            </div>
+                            <p class="text-gray-300 mb-4">
+                                Branding • Content • Go-to-Market Strategy Use your creative genius here — build trust via free frameworks + Canva templates + chatbot-led guidance.
+                            </p>
+                            <button class="text-blue-400 hover:text-blue-300 flex items-center">
+                                Discover Marketing Tools <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Horizontal timeline for desktop -->
+                <div class="hidden md:block">
+                    <div class="grid grid-cols-4 gap-8">
+                        <div class="phase-card bg-gray-800 bg-opacity-50 p-6 rounded-xl h-full">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4">01</div>
+                                <h3 class="text-xl font-bold text-blue-400">Ideation • Validation</h3>
+                            </div>
+                            <p class="text-gray-300 mb-4">
+                                Includes a free tool or quiz + guided questions to shape the idea.
+                            </p>
+                            <button class="text-blue-400 hover:text-blue-300 flex items-center">
+                                Try our Idea Validator <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="phase-card bg-gray-800 bg-opacity-50 p-6 rounded-xl h-full">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4">02</div>
+                                <h3 class="text-xl font-bold text-blue-400">INNOVATE</h3>
+                            </div>
+                            <p class="text-gray-300 mb-4">
+                                Business Model • Prototype • MVP Minimalist digital tools, templates, and optional AI Coach.
+                            </p>
+                            <button class="text-blue-400 hover:text-blue-300 flex items-center">
+                                Explore Tools <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="phase-card bg-gray-800 bg-opacity-50 p-6 rounded-xl h-full">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4">03</div>
+                                <h3 class="text-xl font-bold text-blue-400">AUTOMATE</h3>
+                            </div>
+                            <p class="text-gray-300 mb-4">
+                                Workflow • Sales Funnels • AI Tools Showcase your ready-made automations.
+                            </p>
+                            <button class="text-blue-400 hover:text-blue-300 flex items-center">
+                                See Solutions <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="phase-card bg-gray-800 bg-opacity-50 p-6 rounded-xl h-full">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4">04</div>
+                                <h3 class="text-xl font-bold text-blue-400">CAPTIVATE</h3>
+                            </div>
+                            <p class="text-gray-300 mb-4">
+                                Branding • Content • Go-to-Market Strategy with free frameworks + templates.
+                            </p>
+                            <button class="text-blue-400 hover:text-blue-300 flex items-center">
+                                Discover Tools <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="relative mt-8">
+                        <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                            <div class="w-full border-t border-blue-500 border-opacity-30"></div>
+                        </div>
+                        <div class="relative flex justify-center">
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition duration-300 transform hover:scale-105 shadow-lg">
+                                Begin Your Venture Journey
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 abstract-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="text-blue-400">Comprehensive</span> Services</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Tailored solutions to support your venture at every stage of growth.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="service-card p-6 rounded-xl border border-blue-900/50">
+                    <div class="bg-blue-500 bg-opacity-20 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-lightbulb text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-400">Venture Creation & Development</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Ideation & Validation</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Business Model Design</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Prototyping</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> MVP Development</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card p-6 rounded-xl border border-blue-900/50">
+                    <div class="bg-blue-500 bg-opacity-20 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-400">Business Growth & Scaling</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Market Expansion</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Operational Optimization</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Sales & Marketing</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Automation</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card p-6 rounded-xl border border-blue-900/50">
+                    <div class="bg-blue-500 bg-opacity-20 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-hand-holding-usd text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-400">Fundraising & Investment</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Investor Readiness</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Access to Investors</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Fundraising Strategy</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Pitch Readiness</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card p-6 rounded-xl border border-blue-900/50">
+                    <div class="bg-blue-500 bg-opacity-20 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-400">Mentorship & Coaching</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Expert Guidance</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Personalized Coaching</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Workshops & Training</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-400 mr-2 text-sm"></i> Community</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-bold mb-6">Ready to transform your idea into a thriving venture?</h3>
+                <button class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-medium text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                    Schedule Free Consultation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gradient-to-b from-blue-900/30 to-blue-900/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Success <span class="text-blue-400">Stories</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Hear from entrepreneurs who've transformed their ideas with our guidance.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 bg-opacity-50 p-8 rounded-xl border border-blue-900/50">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah J." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah J.</h4>
+                            <p class="text-sm text-blue-400">Founder, EcoPack</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Neoventix's ideation framework helped me validate my sustainable packaging concept in just 2 weeks. Their tools saved me months of trial and error."
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 bg-opacity-50 p-8 rounded-xl border border-blue-900/50">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael T.</h4>
+                            <p class="text-sm text-blue-400">CEO, HealthTrack</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "The automation systems Neoventix implemented scaled our operations 5x without adding staff. Their white-label solutions are game-changers."
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 bg-opacity-50 p-8 rounded-xl border border-blue-900/50">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya K." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Priya K.</h4>
+                            <p class="text-sm text-blue-400">Co-Founder, LearnLingua</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "With Neoventix's fundraising strategy, we secured $1.2M in seed funding. Their investor pitch framework made all the difference."
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 abstract-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-blue-900/50 to-indigo-900/50 rounded-2xl p-8 md:p-12 shadow-2xl overflow-hidden relative">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl opacity-20"></div>
+                <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-indigo-600 rounded-full filter blur-3xl opacity-20"></div>
+                
+                <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to launch your <span class="text-blue-400">venture</span>?</h2>
+                        <p class="text-xl text-gray-300 mb-6">
+                            Get started with our free resources or schedule a consultation with our experts.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium">
+                                Download Starter Kit
+                            </button>
+                            <button class="border border-blue-400 text-blue-400 hover:bg-blue-900 hover:bg-opacity-30 px-6 py-3 rounded-lg font-medium">
+                                Book Free Call
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 bg-opacity-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4 text-blue-400">Stay Updated</h3>
+                        <p class="text-gray-300 mb-4">Join our newsletter for venture-building insights and tools.</p>
+                        <form class="space-y-4">
+                            <input type="email" placeholder="Your email" class="w-full bg-gray-700 bg-opacity-50 border border-blue-900/50 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 bg-opacity-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Neoventix</h3>
+                    <p class="text-gray-400">
+                        Empowering entrepreneurs to build and scale ventures that make an impact.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400">Home</a></li>
+                        <li><a href="#journey" class="text-gray-400 hover:text-blue-400">Journey</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400">Services</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-400">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400">Tools</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400">Templates</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center"><i class="fas fa-envelope mr-2 text-blue-400"></i> hello@neoventix.com</li>
+                        <li class="flex items-center"><i class="fas fa-phone mr-2 text-blue-400"></i> +1 (555) 123-4567</li>
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i> 123 Venture St, Innovation City</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2023 Neoventix. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-blue-400 text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-400 text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-400 text-sm">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll animation for the journey section
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animate phase cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, {threshold: 0.1});
+        
+        document.querySelectorAll('.phase-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Renrew/neoventix1" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
